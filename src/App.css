@@ -23,11 +23,14 @@
 }
 @layer base {
   :root {
-    --tw-screen-xs: 475px;
-    --tw-screen-sm: 660px;
+    --tw-screen-sm: 640px;
     --tw-screen-md: 768px;
     --tw-screen-lg: 930px;
-    --tw-screen-xl: 1280px;
-    --tw-screen-2xl: 1536px;
   }
+}
+
+#root{
+  background-image: url(./assets/stars.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
 }

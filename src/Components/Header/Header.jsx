@@ -1,17 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import NameBtn from "../NameBtn/NameBtn";
 import { useNavigate } from "react-router";
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 function Header() {
   const navigation = useNavigate();
+  const [burger, setBurger] = useState(false);
+
+  function burgerAppear() {
+    setBurger(!burger);
+  }
 
   return (
     <>
-      <div className=" w-full h-[85px] border-b border-b-white/20 flex justify-between items-center pl-[40px] pr-[40px] max-lg:flex-col max-lg:h-[100px] max-lg:justify-center max-lg:gap-[10px]">
-        <h1 className=" text-white text-3xl font-normal  font-antonio ">
+      <div className=" w-full h-[85px] border-b border-b-white/20 flex justify-between items-center pl-[40px] pr-[40px] max-lg:flex-col max-lg:h-[100px] max-lg:justify-center max-lg:gap-[10px] max-sm:flex-row max-sm:justify-between max-sm:h-[74px]">
+        <h1 className=" text-white text-3xl font-normal  font-antonio max-sm:text-[28px] ">
           THE PLANETS
         </h1>
-        <div className="flex gap-[30px] ">
+        <div
+          className={`max-sm:flex max-sm:flex-col max-sm:gap-[5px] max-sm:cursor-pointer hidden  `}
+          onClick={burgerAppear}
+        >
+          <div className="w-[24px] h-[2px] bg-white"></div>
+          <div className="w-[24px] h-[2px] bg-white"></div>
+          <div className="w-[24px] h-[2px] bg-white"></div>
+        </div>
+        <div className="flex gap-[30px] max-sm:hidden ">
           <NameBtn
             planetName="MERCURY"
             onClick={() => {
@@ -63,6 +77,66 @@ function Header() {
           />
         </div>
       </div>
+      {burger && (
+        <div className="  absolute z-1 w-full h-full bg-[#070724] top-[69px] flex flex-col p-[14px]">
+          <BurgerMenu
+            planetName="MERCURY"
+            onClick={() => {
+              navigation("/planets/Mercury");
+            }}
+            setBurger={setBurger}
+          />
+          <BurgerMenu
+            planetName="VENUS"
+            onClick={() => {
+              navigation("/planets/Venus");
+            }}
+            setBurger={setBurger}
+          />
+          <BurgerMenu
+            planetName="EARTH"
+            onClick={() => {
+              navigation("/planets/Earth");
+            }}
+            setBurger={setBurger}
+          />
+          <BurgerMenu
+            planetName="MARS"
+            onClick={() => {
+              navigation("/planets/Mars");
+            }}
+            setBurger={setBurger}
+          />
+          <BurgerMenu
+            planetName="JUPITER"
+            onClick={() => {
+              navigation("/planets/Jupiter");
+            }}
+            setBurger={setBurger}
+          />
+          <BurgerMenu
+            planetName="SATURN"
+            onClick={() => {
+              navigation("/planets/Saturn");
+            }}
+            setBurger={setBurger}
+          />
+          <BurgerMenu
+            planetName="URANUS"
+            onClick={() => {
+              navigation("/planets/Uranus");
+            }}
+            setBurger={setBurger}
+          />
+          <BurgerMenu
+            planetName="NEPTUNE"
+            onClick={() => {
+              navigation("/planets/Neptune");
+            }}
+            setBurger={setBurger}
+          />
+        </div>
+      )}
     </>
   );
 }
