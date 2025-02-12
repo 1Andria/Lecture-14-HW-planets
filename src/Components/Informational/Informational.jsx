@@ -1,20 +1,26 @@
 import React, { useState } from "react";
 import Arrow from "../../assets/arrow.png";
 import Condition from "../Condition/Condition";
-import Planet from "../../assets/planet-mercury.png";
+import Ragac from "../../../public/geology-venus.png";
 
 function Informational({ newData }) {
   const [active, setActive] = useState(1);
   function getImage() {
     if (active === 1) return newData.images.planet;
     if (active === 2) return newData.images.internal;
-    if (active === 3) return newData.images.geology;
+    if (active === 3) return newData.images.planet;
   }
   return (
     <>
       <div className="flex w-[100%] justify-between">
-        <div className="max-w-[600px] w-full h-auto  flex justify-center items-center">
-          <img src={Planet} alt={newData.name} className="w-[300px] h-auto" />
+        <div className="max-w-[500px] w-full max-h-[430px] h-full  flex justify-center items-center relative">
+          <img src={getImage()} alt={newData.name} className="w-auto h-auto" />
+          <img
+            src={newData.images.geology}
+            className={`${
+              active === 3 ? "block" : "hidden"
+            } h-[179px] w-[143px] absolute top-[65%]`}
+          />
         </div>
         <div className=" flex flex-col max-w-[350px] w-full gap-[10px]">
           <h1 className="font-antonio text-[80px] text-white not-italic font-normal">
