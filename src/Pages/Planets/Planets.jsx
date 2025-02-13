@@ -22,7 +22,7 @@ function Planets({ Data }) {
         }}
       >
         <Header />
-        <div className="flex flex-col h-[100%] justify-between pt-[56px] ">
+        <div className="flex flex-col h-[100%] max-xl:w-[100%] justify-between pt-[56px] max-xl:pr-[30px] max-xl:pl-[30px] ">
           <Informational newData={newData} />
           <LastInfo newData={newData} />
         </div>

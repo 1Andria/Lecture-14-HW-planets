@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Arrow from "../../assets/arrow.png";
 import Condition from "../Condition/Condition";
-import Ragac from "../../../public/geology-venus.png";
 
 function Informational({ newData }) {
   const [active, setActive] = useState(1);
@@ -12,37 +11,39 @@ function Informational({ newData }) {
   }
   return (
     <>
-      <div className="flex w-[100%] justify-between">
-        <div className="max-w-[500px] w-full max-h-[430px] h-full  flex justify-center items-center relative">
+      <div className="flex w-[100%] justify-between gap-[30px] max-md:flex-col max-md:items-center ">
+        <div className="max-w-[500px] w-full max-h-[430px] h-full  flex justify-center items-center relative max-md:max-w-[290px] max-md:h-[220px] max-[685px]:!max-w-[250px] max-[685px]:!h-[180px]">
           <img src={getImage()} alt={newData.name} className="w-auto h-auto" />
           <img
             src={newData.images.geology}
             className={`${
               active === 3 ? "block" : "hidden"
-            } h-[179px] w-[143px] absolute top-[65%]`}
+            } max-h-[179px] max-w-[143px] max-lg:w-[110px] max-lg:h-[139px] absolute top-[65%]`}
           />
         </div>
-        <div className=" flex flex-col max-w-[350px] w-full gap-[10px]">
-          <h1 className="font-antonio text-[80px] text-white not-italic font-normal">
-            {newData.name.toUpperCase()}
-          </h1>
-          <p className="font-spartan text-white text-[14px] ">
-            {newData.overview.content}
-          </p>
-          <div className="flex gap-[8px] items-center">
-            <p className="font-spartan text-white text-[14px] opacity-[0.5] leading-[25px]">
-              Source:{" "}
-              <a
-                href={newData.overview.source}
-                target="_blank"
-                className=" text-[16px] underline"
-              >
-                Wikipedia
-              </a>
+        <div className=" flex flex-col max-w-[350px] w-full gap-[30px] max-md:flex-row max-md:items-center max-md:max-w-full max-md:justify-between max-[575px]:!justify-center">
+          <div className="max-md:max-w-[329px] flex flex-col gap-[12px] ">
+            <h1 className="font-antonio text-[70px] text-white not-italic font-normal max-md:text-[48px] max-[575px]:text-center">
+              {newData.name.toUpperCase()}
+            </h1>
+            <p className="font-spartan text-white text-[14px] max-md:text-[11px]  ">
+              {newData.overview.content}
             </p>
-            <img src={Arrow} alt="Arrow" className="w-[12px] h-[12px]" />
+            <div className="flex gap-[8px] items-center !mb-[10px] max-[575px]:justify-center">
+              <p className="font-spartan text-white text-[14px] opacity-[0.5] leading-[25px]  ">
+                Source:{" "}
+                <a
+                  href={newData.overview.source}
+                  target="_blank"
+                  className=" text-[16px] underline"
+                >
+                  Wikipedia
+                </a>
+              </p>
+              <img src={Arrow} alt="Arrow" className="w-[12px] h-[12px]" />
+            </div>
           </div>
-          <div className="flex flex-col gap-[16px]">
+          <div className="flex flex-col gap-[16px] max-[575px]:hidden">
             <Condition
               number="01"
               cond="OVERVIEW"

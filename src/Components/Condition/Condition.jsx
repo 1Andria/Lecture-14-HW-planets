@@ -17,12 +17,16 @@ function Condition({ number, cond, isActive, onClick, planetName }) {
         onClick={onClick}
         className={` hover:bg-[#D8D8D8]/20  cursor-pointer ${
           isActive ? planetColors[planetName] : "bg-transparent"
-        } w-[350px] h-[48px] border border-white/20 pl-[28px] pt-[12px] flex gap-[28px]`}
+        } w-[350px] h-[48px] border border-white/20 pl-[28px] pt-[12px] flex gap-[28px]
+        max-md:w-[281px] max-md:h-[40px]
+        `}
       >
-        <p className=" font-spartan text-[12px] opacity-[0.5] text-white">
+        <p className=" font-spartan text-[12px] opacity-[0.5] text-white max-md:text-[9px]">
           {number}
         </p>
-        <h3 className=" text-white font-spartan text-[12px]">{cond}</h3>
+        <h3 className=" text-white font-spartan text-[12px] max-md:text-[9px]">
+          {cond}
+        </h3>
       </div>
     </>
   );

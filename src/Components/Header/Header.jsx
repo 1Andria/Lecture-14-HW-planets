@@ -13,19 +13,24 @@ function Header() {
 
   return (
     <>
-      <div className=" w-full h-[85px] border-b border-b-white/20 flex justify-between items-center pl-[40px] pr-[40px] max-lg:flex-col max-lg:h-[100px] max-lg:justify-center max-lg:gap-[10px] max-sm:flex-row max-sm:justify-between max-sm:h-[74px]">
-        <h1 className=" text-white text-3xl font-normal  font-antonio max-sm:text-[28px] ">
+      <div
+        className={`w-full h-[85px] border-b border-b-white/20 flex justify-between items-center pl-[40px] pr-[40px] 
+          max-lg:flex-col max-lg:h-[100px] max-lg:justify-center max-lg:gap-[10px] 
+          max-[685px]:!justify-between max-[685px]:!h-[74px] max-[685px]:pt-[20px] max-[685px]:pb-[20px]   max-[685px]:!flex-row 
+          ${burger ? "absolute z-10" : ""}`}
+      >
+        <h1 className=" text-white text-3xl font-normal  font-antonio max-[685px]:text-[28px] ">
           THE PLANETS
         </h1>
         <div
-          className={`max-sm:flex max-sm:flex-col max-sm:gap-[5px] max-sm:cursor-pointer hidden  `}
+          className={`max-[685px]:flex max-[685px]:flex-col max-[685px]:gap-[5px] max-[685px]:cursor-pointer hidden  `}
           onClick={burgerAppear}
         >
           <div className="w-[24px] h-[2px] bg-white"></div>
           <div className="w-[24px] h-[2px] bg-white"></div>
           <div className="w-[24px] h-[2px] bg-white"></div>
         </div>
-        <div className="flex gap-[30px] max-sm:hidden ">
+        <div className="flex gap-[30px] max-[685px]:hidden ">
           <NameBtn
             planetName="MERCURY"
             onClick={() => {
@@ -78,7 +83,7 @@ function Header() {
         </div>
       </div>
       {burger && (
-        <div className="  absolute z-1 w-full h-full bg-[#070724] top-[69px] flex flex-col p-[14px]">
+        <div className="  absolute z-1 w-full h-full bg-[#070724]  pt-[69px]  flex flex-col p-[14px]">
           <BurgerMenu
             planetName="MERCURY"
             onClick={() => {
