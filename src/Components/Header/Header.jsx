@@ -16,7 +16,7 @@ function Header() {
       <div
         className={`w-full h-[85px] border-b border-b-white/20 flex justify-between items-center pl-[40px] pr-[40px] 
           max-lg:flex-col max-lg:h-[100px] max-lg:justify-center max-lg:gap-[10px] 
-          max-[700px]:!justify-between max-[700px]:!h-[74px] max-[700px]:pt-[20px] max-[700px]:pb-[20px]   max-[700px]:!flex-row 
+          max-[700px]:!justify-between max-[700px]:!h-[74px] max-[700px]:pt-[16px] max-[700px]:pb-[16px]   max-[700px]:!flex-row max-[700px]:pl-[30px] max-[700px]:pr-[30px] 
           ${burger ? "absolute z-10" : ""}`}
       >
         <h1 className=" text-white text-3xl font-normal  font-antonio max-[700px]:text-[28px] ">
@@ -31,55 +31,57 @@ function Header() {
           <div className="w-[24px] h-[2px] bg-white"></div>
         </div>
         <div className="flex gap-[30px] max-[700px]:hidden ">
-          <NameBtn
-            planetName="MERCURY"
-            onClick={() => {
-              navigation("/planets/Mercury");
-            }}
-          />
-          <NameBtn
-            planetName="VENUS"
-            onClick={() => {
-              navigation("/planets/Venus");
-            }}
-          />
+          <nav className="flex gap-[30px]  ">
+            <NameBtn
+              planetName="MERCURY"
+              onClick={() => {
+                navigation("/planets/Mercury");
+              }}
+            />
+            <NameBtn
+              planetName="VENUS"
+              onClick={() => {
+                navigation("/planets/Venus");
+              }}
+            />
 
-          <NameBtn
-            planetName="EARTH"
-            onClick={() => {
-              navigation("/planets/Earth");
-            }}
-          />
-          <NameBtn
-            planetName="MARS"
-            onClick={() => {
-              navigation("/planets/Mars");
-            }}
-          />
-          <NameBtn
-            planetName="JUPITER"
-            onClick={() => {
-              navigation("/planets/Jupiter");
-            }}
-          />
-          <NameBtn
-            planetName="SATURN"
-            onClick={() => {
-              navigation("/planets/Saturn");
-            }}
-          />
-          <NameBtn
-            planetName="URANUS"
-            onClick={() => {
-              navigation("/planets/Uranus");
-            }}
-          />
-          <NameBtn
-            planetName="NEPTUNE"
-            onClick={() => {
-              navigation("/planets/Neptune");
-            }}
-          />
+            <NameBtn
+              planetName="EARTH"
+              onClick={() => {
+                navigation("/planets/Earth");
+              }}
+            />
+            <NameBtn
+              planetName="MARS"
+              onClick={() => {
+                navigation("/planets/Mars");
+              }}
+            />
+            <NameBtn
+              planetName="JUPITER"
+              onClick={() => {
+                navigation("/planets/Jupiter");
+              }}
+            />
+            <NameBtn
+              planetName="SATURN"
+              onClick={() => {
+                navigation("/planets/Saturn");
+              }}
+            />
+            <NameBtn
+              planetName="URANUS"
+              onClick={() => {
+                navigation("/planets/Uranus");
+              }}
+            />
+            <NameBtn
+              planetName="NEPTUNE"
+              onClick={() => {
+                navigation("/planets/Neptune");
+              }}
+            />
+          </nav>
         </div>
       </div>
       {burger && (
