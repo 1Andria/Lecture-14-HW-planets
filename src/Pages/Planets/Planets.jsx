@@ -4,7 +4,7 @@ import Header from "../../Components/Header/Header";
 import Stars from "../../assets/stars.png";
 import Informational from "../../Components/Informational/Informational";
 import LastInfo from "../../Components/LastInfo/LastInfo";
-import HiddenConditions from "../../Components/HiddenConditions/HiddenConditions";
+import HiddenDiv from "../../Components/HiddenDiv/HiddenDiv";
 
 function Planets({ Data }) {
   const { name } = useParams();
@@ -29,27 +29,7 @@ function Planets({ Data }) {
         }}
       >
         <Header />
-        <div className="hidden h-[50px] w-[100%] border border-b-white/20 max-[600px]:flex justify-between pl-[24px] pr-[24px]">
-          <HiddenConditions
-            cond="OVERVIEW"
-            isActive={active === 1}
-            onClick={() => setActive(1)}
-            planetName={newData.name}
-          />
-          <HiddenConditions
-            cond="STRUCTURE"
-            isActive={active === 2}
-            onClick={() => setActive(2)}
-            planetName={newData.name}
-          />
-          <HiddenConditions
-            cond="SURFACE"
-            isActive={active === 3}
-            onClick={() => setActive(3)}
-            planetName={newData.name}
-          />
-        </div>
-
+        <HiddenDiv newData={newData} active={active} setActive={setActive} />
         <div className="flex flex-col h-[100%] max-xl:w-[100%] justify-between pt-[56px] max-xl:pr-[30px] max-xl:pl-[30px] max-[700px]:pt-[20%px] ">
           <Informational
             newData={newData}
