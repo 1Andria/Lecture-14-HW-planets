@@ -16,21 +16,21 @@ function Header() {
       <div
         className={`w-full h-[85px] border-b border-b-white/20 flex justify-between items-center pl-[40px] pr-[40px] 
           max-lg:flex-col max-lg:h-[100px] max-lg:justify-center max-lg:gap-[10px] 
-          max-[685px]:!justify-between max-[685px]:!h-[74px] max-[685px]:pt-[20px] max-[685px]:pb-[20px]   max-[685px]:!flex-row 
+          max-[700px]:!justify-between max-[700px]:!h-[74px] max-[700px]:pt-[20px] max-[700px]:pb-[20px]   max-[700px]:!flex-row 
           ${burger ? "absolute z-10" : ""}`}
       >
-        <h1 className=" text-white text-3xl font-normal  font-antonio max-[685px]:text-[28px] ">
+        <h1 className=" text-white text-3xl font-normal  font-antonio max-[700px]:text-[28px] ">
           THE PLANETS
         </h1>
         <div
-          className={`max-[685px]:flex max-[685px]:flex-col max-[685px]:gap-[5px] max-[685px]:cursor-pointer hidden  `}
+          className={`max-[700px]:flex max-[700px]:flex-col max-[700px]:gap-[5px] max-[700px]:cursor-pointer hidden  `}
           onClick={burgerAppear}
         >
           <div className="w-[24px] h-[2px] bg-white"></div>
           <div className="w-[24px] h-[2px] bg-white"></div>
           <div className="w-[24px] h-[2px] bg-white"></div>
         </div>
-        <div className="flex gap-[30px] max-[685px]:hidden ">
+        <div className="flex gap-[30px] max-[700px]:hidden ">
           <NameBtn
             planetName="MERCURY"
             onClick={() => {

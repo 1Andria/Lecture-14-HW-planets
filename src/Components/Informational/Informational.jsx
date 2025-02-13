@@ -12,7 +12,7 @@ function Informational({ newData }) {
   return (
     <>
       <div className="flex w-[100%] justify-between gap-[30px] max-md:flex-col max-md:items-center ">
-        <div className="max-w-[500px] w-full max-h-[430px] h-full  flex justify-center items-center relative max-md:max-w-[290px] max-md:h-[220px] max-[685px]:!max-w-[250px] max-[685px]:!h-[180px]">
+        <div className="max-w-[500px] w-full max-h-[430px] h-full  flex justify-center items-center relative max-md:max-w-[290px] max-md:h-[220px] max-[700px]:!max-w-[250px] max-[700px]:!h-[180px]">
           <img src={getImage()} alt={newData.name} className="w-auto h-auto" />
           <img
             src={newData.images.geology}
@@ -22,7 +22,7 @@ function Informational({ newData }) {
           />
         </div>
         <div className=" flex flex-col max-w-[350px] w-full gap-[30px] max-md:flex-row max-md:items-center max-md:max-w-full max-md:justify-between max-[575px]:!justify-center">
-          <div className="max-md:max-w-[329px] flex flex-col gap-[12px] ">
+          <div className="max-md:max-w-[329px] flex flex-col gap-[8px] ">
             <h1 className="font-antonio text-[70px] text-white not-italic font-normal max-md:text-[48px] max-[575px]:text-center">
               {newData.name.toUpperCase()}
             </h1>
