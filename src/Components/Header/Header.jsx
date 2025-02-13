@@ -6,6 +6,20 @@ import BurgerMenu from "../BurgerMenu/BurgerMenu";
 function Header() {
   const navigation = useNavigate();
   const [burger, setBurger] = useState(false);
+  const planetNames = [
+    "Mercury",
+    "Venus",
+    "Earth",
+    "Mars",
+    "Jupiter",
+    "Saturn",
+    "Uranus",
+    "Neptune",
+  ];
+
+  function navigate(planet) {
+    navigation(`/planets/${planet}`);
+  }
 
   function burgerAppear() {
     setBurger(!burger);
@@ -32,116 +46,28 @@ function Header() {
         </div>
         <div className="flex gap-[30px] max-[700px]:hidden ">
           <nav className="flex gap-[30px]  ">
-            <NameBtn
-              planetName="MERCURY"
-              onClick={() => {
-                navigation("/planets/Mercury");
-              }}
-            />
-            <NameBtn
-              planetName="VENUS"
-              onClick={() => {
-                navigation("/planets/Venus");
-              }}
-            />
-
-            <NameBtn
-              planetName="EARTH"
-              onClick={() => {
-                navigation("/planets/Earth");
-              }}
-            />
-            <NameBtn
-              planetName="MARS"
-              onClick={() => {
-                navigation("/planets/Mars");
-              }}
-            />
-            <NameBtn
-              planetName="JUPITER"
-              onClick={() => {
-                navigation("/planets/Jupiter");
-              }}
-            />
-            <NameBtn
-              planetName="SATURN"
-              onClick={() => {
-                navigation("/planets/Saturn");
-              }}
-            />
-            <NameBtn
-              planetName="URANUS"
-              onClick={() => {
-                navigation("/planets/Uranus");
-              }}
-            />
-            <NameBtn
-              planetName="NEPTUNE"
-              onClick={() => {
-                navigation("/planets/Neptune");
-              }}
-            />
+            {planetNames.map((planet, key) => (
+              <NameBtn
+                key={key}
+                planetName={planet.toUpperCase()}
+                onClick={() => navigate(planet)}
+              />
+            ))}
           </nav>
         </div>
       </div>
       {burger && (
         <div className="  absolute z-1 w-full h-full bg-[#070724]  pt-[69px]  flex flex-col p-[14px]">
-          <BurgerMenu
-            planetName="MERCURY"
-            onClick={() => {
-              navigation("/planets/Mercury");
-            }}
-            setBurger={setBurger}
-          />
-          <BurgerMenu
-            planetName="VENUS"
-            onClick={() => {
-              navigation("/planets/Venus");
-            }}
-            setBurger={setBurger}
-          />
-          <BurgerMenu
-            planetName="EARTH"
-            onClick={() => {
-              navigation("/planets/Earth");
-            }}
-            setBurger={setBurger}
-          />
-          <BurgerMenu
-            planetName="MARS"
-            onClick={() => {
-              navigation("/planets/Mars");
-            }}
-            setBurger={setBurger}
-          />
-          <BurgerMenu
-            planetName="JUPITER"
-            onClick={() => {
-              navigation("/planets/Jupiter");
-            }}
-            setBurger={setBurger}
-          />
-          <BurgerMenu
-            planetName="SATURN"
-            onClick={() => {
-              navigation("/planets/Saturn");
-            }}
-            setBurger={setBurger}
-          />
-          <BurgerMenu
-            planetName="URANUS"
-            onClick={() => {
-              navigation("/planets/Uranus");
-            }}
-            setBurger={setBurger}
-          />
-          <BurgerMenu
-            planetName="NEPTUNE"
-            onClick={() => {
-              navigation("/planets/Neptune");
-            }}
-            setBurger={setBurger}
-          />
+          {planetNames.map((planet, key) => (
+            <BurgerMenu
+              key={key}
+              planetName={planet.toUpperCase()}
+              onClick={() => {
+                navigate(planet);
+                setBurger(false);
+              }}
+            />
+          ))}
         </div>
       )}
     </>

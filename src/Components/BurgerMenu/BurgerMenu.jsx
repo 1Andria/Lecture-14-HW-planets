@@ -1,7 +1,7 @@
 import React from "react";
 import MobArrow from "../../assets/mobArrow.png";
 
-function BurgerMenu({ planetName, onClick, setBurger }) {
+function BurgerMenu({ planetName, onClick }) {
   const planetColors = {
     MERCURY: "bg-[#419EBB]",
     VENUS: "bg-[#EDA249]",
@@ -12,14 +12,11 @@ function BurgerMenu({ planetName, onClick, setBurger }) {
     URANUS: "bg-[#1EC2A4]",
     NEPTUNE: "bg-[#2D68F0]",
   };
-  function BurgerFunction() {
-    onClick();
-    setBurger(false);
-  }
+
   return (
     <>
       <div
-        onClick={BurgerFunction}
+        onClick={onClick}
         className="flex pb-[23px] pt-[23px] border-b border-b-white/20 justify-between items-center cursor-pointer "
       >
         <div className="flex gap-[25px]">
