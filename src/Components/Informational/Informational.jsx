@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Arrow from "../../assets/arrow.png";
 import Condition from "../Condition/Condition";
 
